@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bodegones 4.0 - La Tablita - Ravioles</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    <link rel="stylesheet" href="css/bodegones.css">
+
+</head>
+
+<body>
+    <main class="mainResto">
+        <section class="linkResto">
+            <div class="picResto">
+                <img src="img/plato2.png" alt="" width="100%">
+                <div class="degradado"></div>
+            </div>
+            <div class="nameResto">
+                <div class="vaina">
+                    <h2>Bucattini con menta</h2>
+                    <h5 class="gris_txt">Ravioles rellenos con tinta de pulpo y sanbuche de milanga</h5>
+                </div>
+
+            </div>
+            <div class="puntuResto">$<span id="precio">1500<span></div>
+        </section>
+        <br><br>
+        <section class="descResto gris_txt">
+            <p class="p10">Elit ipsum pariatur totam, optio magnam.Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum pariatur totam, optio magnam.</p>
+            <input type="text" placeholder="Add a note or opinion +">
+        </section>
+    </main>
+    <nav class="agregarCarrito">
+        <div class="flex">
+            <button id="restar" class="material-icons-outlined botonCarrito" onclick="restar()">remove</button>
+            <p class="botonCarrito" id="cantidad">2</p>
+            <button id="sumar" class="material-icons-outlined botonCarrito" onclick="sumar()">add</button>
+        </div>
+        <button class="btnAgregar"><i class="material-icons-outlined">post_add</i>Agregar al pedido</button>
+    </nav>
+    <script src="components/js/actions.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,607 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body{
+    height: 100vh;
+    width: 100%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+    color: rgb(100, 100, 100);
+}
+
+body::-webkit-scrollbar{
+    width: 5px;
+}
+
+body::-webkit-scrollbar-track{
+    background: rgb(214, 214, 214);
+}
+
+body::-webkit-scrollbar-thumb{
+    width: 5px;
+    background: rgb(109, 109, 109);
+}
+
+body::-webkit-scrollbar-thumb:hover{
+    background: rgb(78, 78, 78);
+}
+
+header{
+    height: 60%;
+    width: 100%;
+    background-image: url(../img/restaurant.jpg);
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    color: rgb(46, 46, 46);
+}
+
+.portada{
+    position: relative;
+    height: 70%;
+    width: 100%;     
+    z-index: 3;
+}
+
+.portada::before{
+    position: absolute;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.521), rgba(255, 255, 255, 0));
+    content: '';
+    height: 100%;
+    width: 100%;
+   
+}
+
+.saludo{
+    position: absolute;
+    left: 5%;
+    bottom: 20%;
+    z-index: 2;
+    color: rgb(255, 255, 255);;
+}
+
+nav.categorias{
+    height: 30%;
+    width: 100%;
+    background-color: white;
+    padding: 60px 30px 100px 30px;
+    display: flex;
+    gap: 20px;
+    overflow: hidden;
+    overflow-x: scroll;
+}
+
+nav.categorias::-webkit-scrollbar{ 
+    color: transparent;
+    height: 5px;
+}
+
+nav a.btn-cat{
+    height: 70px;
+    width: 70px;
+    flex: 0 0 70px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: rgb(100, 100, 100);
+    text-decoration: none;
+}
+
+nav a i{
+    font-size: 3em!important;
+}
+
+.buscador{
+    position: absolute;
+    bottom: -20px;
+    left: 5%;
+    right: 5%;
+    height: 40px;
+    width: 90%;
+    margin: auto;
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    box-shadow: 0 10px 20px -10px rgb(0, 0, 0);
+    overflow: hidden;
+}
+
+.buscador .icono{
+    width: 40px;
+    background-color: black;
+    color: white;
+    display: grid;
+    place-items: center;
+}
+
+.buscador input[type=search]{
+    padding: 10px;
+    border: none;
+    outline: none;
+    width: calc(100% - 80px)
+}
+
+.buscador input[type=search] focus{
+    border: none;
+}
+
+.buscador input[type=submit]{
+    width: 40px;
+    border: none;
+    outline: none;
+    background-color: rgb(182, 182, 182);
+    cursor: pointer;
+    transition: all 30ms ease-in-out;
+}
+
+.buscador input[type=submit]:hover{
+    transform: scale(1.1);
+}
+
+main {
+    height: 100px auto;
+    width: 100%;
+    padding: 15px;
+
+}
+
+main .restaurantes{
+    width: 100%;
+    height: 100px auto;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+}
+
+main .resto{
+    width: 100%;
+    flex: 0 0 160px;
+    background-color: rgba(0, 0, 0, 0.918);
+    display: flex;
+    align-content: center;
+    position: relative;
+    border-radius: 20px;
+    box-shadow: 0 5px 10px -3px rgba(0, 0, 0, 0.473);
+}
+
+main .resto:hover{
+    cursor: pointer;
+}
+
+.imagen_resto{
+    position: absolute;
+    height: 100%;
+    width: 35%;
+    float: left;
+    z-index: 0;
+    background-color: rgb(85, 84, 84);
+    background-image: url(../img/restaurant.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px 0 0 20px;
+}
+
+.desc_resto{
+    position: absolute;
+    height: 100%;
+    width: 65%;
+    background-color: rgb(255, 255, 255);
+    color: rgb(100, 100, 100);
+    float: right;
+    right: 0;
+    display: flex;
+    border-bottom-left-radius: 20px;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 15px;
+}
+
+.precio_val {
+    width: 100%;
+    right: 5px;
+    bottom: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.valoraciones{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16pt!important;
+}
+
+.distancia{
+    position: absolute;
+    top: 5px;
+    left: 28%;
+    font-weight: bolder;
+    color: aliceblue;
+    text-shadow: 0 0 5px black;
+}
+
+.puntuacion{
+    position: absolute;
+    right: -10px;
+    top: -10px;
+    padding: 15px;
+    background-color: var(--verde);
+    border-radius: 10px 0 10px 0;
+    font-weight: bolder;
+    color: rgb(255, 255, 255);
+    display: flex;
+    font-size: 20pt!important;
+}
+
+.precio {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16pt!important;
+}
+
+:root{
+    --verde:rgb(19,209,146);
+    --gris:rgb(136,136,136);
+}
+.verde_txt{
+    color: var(--verde);
+}
+.gris_txt{
+    color: var(--gris);
+}
+
+nav.menuinferior{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    background-color: white;
+    display: flex;
+    box-shadow: 0 13px 15px 15px rgba(0, 0, 0, 0.473);
+}
+
+nav a {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+nav button{
+    height: 100%;
+    width: 100%;
+    flex: 0 0 33.33%;
+    border: 0;
+    background-color: transparent!important;
+    cursor: pointer;
+    transition: all 0.1s ease-in-out;
+}
+
+.mainResto {
+    height: 100%;
+    background-color: white;
+    padding: 0;
+}
+
+.linkResto{
+    position: relative;
+    height: 60%;
+    width: 100%;
+    background-color: white;
+}
+
+.close{
+    position: absolute;
+    height: 25px;
+    width: 25px;
+    color: rgb(0, 0, 0);
+    background-color: white;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: solid black 2px;
+    z-index: 1;
+    top: 2%;
+    left: 2%;
+
+    & i{
+        font-size: 1.7em!important;
+    }
+}
+
+.close:hover{
+    cursor: pointer;
+}
+
+.picResto{
+    position: relative;
+    height: 80%;
+    width: 100%;
+    background-image: url("../img/restaurant.jpg");
+    background-position: center;
+    background-size: cover;
+    background-color: cadetblue;
+}
+
+.nameResto{
+    height: 20%;
+    width: 100%;
+    color: rgba(0, 0, 0, 0.877);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    padding-left: 5%;
+    background-color: white;
+
+    & h4{
+        color: rgb(48, 48, 48);
+    }
+}
+
+.calificacion{
+    position: absolute;
+    right: 3%;
+    bottom: 8%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.puntuResto{
+    height: 100%;
+    width: 80%;
+    padding: 15px;
+    background-color: rgb(19,209,146);
+    border-radius: 10px 0 10px 0;
+    font-weight: bolder;
+    color: white;
+    display: flex;
+    font-size: 20pt!important;
+    box-shadow: 0 5px 10px -3px rgba(0, 0, 0, 0.473);
+}
+
+.priceResto{
+    width: 100%;
+    height: 20%;
+}
+
+.descResto{
+    width: 100%;
+    height: calc(40% - 60px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.details{
+    width: 100%;
+    /* height: 20%; */
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    & i{
+        color: rgb(81, 206, 164);
+        font-size: 2.5em;
+    }
+}
+
+.textito{
+    width: 100%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-left: 5%;
+}
+
+.info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+nav a:hover{
+    border-top: solid 3px rgb(92, 212, 172);
+    font-weight: 700;
+}
+
+.focused{
+    background-color: gray;
+    border-top: solid 3px rgb(92, 212, 172);
+    font-weight: 700;
+}
+
+.columna{
+    display: flex;
+    flex-direction: column;
+
+    & hr{
+        width: 70px; 
+        height: 1px;
+        border: solid 2px rgb(63, 228, 173);  
+    }
+    
+}
+
+.headerMenu{
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 10%;
+    background-color: white;
+    background-image: none;
+    box-shadow: 0 5px 10px -3px rgba(0, 0, 0, 0.473);
+
+    & .contenedor{
+        position: relative;
+        width: 100%;
+        height: 100%;
+        display: flex;
+
+        & .close_menu{
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            top: 35%;
+            left: 3%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            & a{
+                color: black;
+            }
+        }
+        
+        & .titleResto{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            & p{
+                font-size: 1.3em;
+            }
+        }
+    }
+
+    
+}
+
+.mainMenu{
+    position: relative;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: calc(90% - 60px);
+    background-color: rgba(230, 230, 230, 0.822);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: top;
+    overflow-y: scroll;
+    
+    & .platoTituloMain{
+        width: 100%;
+        height: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        & p{
+            color: black;
+            font-size: 1.1em;
+        }
+    }
+
+    & .platos{
+        width: 100%;
+        height: calc(100% - 60px);
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+        align-items: flex-start;
+        margin-right: 5%;
+
+        & a{
+            width: 80%;
+            height: 120px;
+            border-radius: 15px;
+        }
+
+        & .plato{
+            width: 100%;
+            height: 120px;
+            display: flex;
+            border-radius: 15px;
+            box-shadow: 0 5px 10px -3px rgba(0, 0, 0, 0.603);
+
+            & .imgPlato{
+                position: relative;
+                width: 30%;
+                height: 100%;
+                background-color: transparent;
+                background-image: url(../img/plato2.png);
+                background-size: contain;
+                background-position: center;
+                background-repeat: no-repeat;
+                border-top-left-radius: 15px;
+                border-bottom-left-radius: 15px;
+
+                & .precioPlato{
+                    position: absolute;
+                    height: 30px;
+                    width: 60px;
+                    background-color: rgb(19,209,146);
+                    border-radius: 10px 0 10px 0;
+                    font-weight: bolder;
+                    color: white;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 15pt!important;
+                    box-shadow: 0 5px 10px -3px rgba(0, 0, 0, 0.644);
+                    right: 0;
+                    bottom: 15%;
+                }
+            }
+
+            & .descPlato{
+                width: 70%;
+                height: 100%;
+                padding-top: 10px;
+                padding-left: 15px;
+                background-color: rgba(230, 230, 230, 0.822);
+                color: black;
+                display: flex;
+                flex-direction: column;
+                justify-content: top;
+                align-items: left;
+                border-top-right-radius: 15px;
+                border-bottom-right-radius: 15px;
+            }
+        }
+    }
+}
+
+.mainMenu::-webkit-scrollbar{
+    display: none;
+}
+
+@media (orientation = landscape) {
+    main .restaurantes{
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    main .restaurantes .resto {
+        height: 160px;
+        flex: 0 0 calc(50% - 10px);
+    }
+    .platos a{
+        flex-basis: calc(30% - 20px);
+        width: calc(30% - 20px);
+    }
+}
